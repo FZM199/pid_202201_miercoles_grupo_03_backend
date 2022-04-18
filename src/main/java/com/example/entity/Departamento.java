@@ -122,3 +122,4 @@ public class Departamento {
 	public void setCod_usuario(int cod_usuario) {
 		this.cod_usuario = cod_usuario;
 	}
+}
