@@ -17,35 +17,39 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "Propietario")
+@Table(name = "propietario")
 public class Propietario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	private int codpropietario;
+	@Column(name = "codpropietario")
+	private int cod_propietario;
 	
 	@Basic(optional = false)
-	@Column(length = 8)
-	private int dni;
+	@Column(name = "dni",length = 8)
+	private int dni_propietario;
 	
 	@Basic(optional = false)
-	@Column(length = 200)
-	private String nombre;
+	@Column(name = "nombre",length = 200)
+	private String nombre_propietario;
 	
 	@Basic(optional = false)
-	@Column(length = 200)
-	private String primerapellido;
+	@Column(name = "primerapellido",length = 200)
+	private String primerapellido_propietario;
 	
 	@Basic(optional = false)
-	@Column( length = 200)
-	private String segundoapellido;
+	@Column( name = "segundoapellido",length = 200)
+	private String segundoapellido_propietario;
 	
 	@Basic(optional = false)
-	private String telefono;
+	@Column(name = "telefono")
+	private String telefono_propietario;
+	
 	
 	@Basic(optional = false)
-	private String celular;
+	@Column(name = "celular")
+	private String celular_propietario;
 	
 	
 	
@@ -53,135 +57,109 @@ public class Propietario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Basic(optional = false)
-	private Date fecharegistro;
+	@Column(name = "fecharegistro")
+	private Date fecharegistro_propietario;
 	
 	
 	@Basic(optional = false)
-	private boolean estado;
+	@Column(name = "estado")
+	private boolean estado_propietario;
+
+
+
+
+	public int getCod_propietario() {
+		return cod_propietario;
+	}
+
+
+	public void setCod_propietario(int cod_propietario) {
+		this.cod_propietario = cod_propietario;
+	}
+
+
+	public int getDni_propietario() {
+		return dni_propietario;
+	}
+
+
+	public void setDni_propietario(int dni_propietario) {
+		this.dni_propietario = dni_propietario;
+	}
+
+
+	public String getNombre_propietario() {
+		return nombre_propietario;
+	}
+
+
+	public void setNombre_propietario(String nombre_propietario) {
+		this.nombre_propietario = nombre_propietario;
+	}
+
+
+	public String getPrimerapellido_propietario() {
+		return primerapellido_propietario;
+	}
+
+
+	public void setPrimerapellido_propietario(String primerapellido_propietario) {
+		this.primerapellido_propietario = primerapellido_propietario;
+	}
+
+
+	public String getSegundoapellido_propietario() {
+		return segundoapellido_propietario;
+	}
+
+
+	public void setSegundoapellido_propietario(String segundoapellido_propietario) {
+		this.segundoapellido_propietario = segundoapellido_propietario;
+	}
+
+
+	public String getTelefono_propietario() {
+		return telefono_propietario;
+	}
+
+
+	public void setTelefono_propietario(String telefono_propietario) {
+		this.telefono_propietario = telefono_propietario;
+	}
+
+
+	public String getCelular_propietario() {
+		return celular_propietario;
+	}
+
+
+	public void setCelular_propietario(String celular_propietario) {
+		this.celular_propietario = celular_propietario;
+	}
+
+
+	public Date getFecharegistro_propietario() {
+		return fecharegistro_propietario;
+	}
+
+
+	public void setFecharegistro_propietario(Date fecharegistro_propietario) {
+		this.fecharegistro_propietario = fecharegistro_propietario;
+	}
+
+
+	public boolean isEstado_propietario() {
+		return estado_propietario;
+	}
+
+
+	public void setEstado_propietario(boolean estado_propietario) {
+		this.estado_propietario = estado_propietario;
+	}
 
 	
 
-	public Propietario(int codpropietario, int dni, String nombre, String primerapellido, String segundoapellido,
-			String telefono, String celular, Date fecharegistro, boolean estado) {
-		super();
-		this.codpropietario = codpropietario;
-		this.dni = dni;
-		this.nombre = nombre;
-		this.primerapellido = primerapellido;
-		this.segundoapellido = segundoapellido;
-		this.telefono = telefono;
-		this.celular = celular;
-		this.fecharegistro = fecharegistro;
-		this.estado = estado;
-	}
-
-
-
-	public int getCodpropietario() {
-		return codpropietario;
-	}
-
-
-
-	public void setCodpropietario(int codpropietario) {
-		this.codpropietario = codpropietario;
-	}
-
-
-
-	public int getDni() {
-		return dni;
-	}
-
-
-
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-
-	public String getPrimerapellido() {
-		return primerapellido;
-	}
-
-
-
-	public void setPrimerapellido(String primerapellido) {
-		this.primerapellido = primerapellido;
-	}
-
-
-
-	public String getSegundoapellido() {
-		return segundoapellido;
-	}
-
-
-
-	public void setSegundoapellido(String segundoapellido) {
-		this.segundoapellido = segundoapellido;
-	}
-
-
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-
-
-	public String getCelular() {
-		return celular;
-	}
-
-
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-
-
-	public Date getFecharegistro() {
-		return fecharegistro;
-	}
-
-
-
-	public void setFecharegistro(Date fecharegistro) {
-		this.fecharegistro = fecharegistro;
-	}
-
-
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
+	
 
 	
 	
