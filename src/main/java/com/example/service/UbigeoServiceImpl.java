@@ -1,9 +1,10 @@
 package com.example.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UbigeoServiceImpl {
 
-	public UbigeoServiceImpl() {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 }
