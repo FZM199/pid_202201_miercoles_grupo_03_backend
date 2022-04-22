@@ -28,6 +28,4 @@ public class UbigeoServiceImpl implements UbigeoService {
 	public List<Ubigeo> listaDistritos(String departamento, String provincia) {
 		return repository.listaDistritos(departamento, provincia);
 	}
-	
-
 }

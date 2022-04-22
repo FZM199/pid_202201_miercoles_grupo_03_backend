@@ -1,5 +1,6 @@
 package com.example.service;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		// TODO Auto-generated method stub
 		return repo.exitsByNombreUsuario(nombreUsuario);
 	}
+
 
 	@Override
 	public boolean exitsByEmail(String email) {
