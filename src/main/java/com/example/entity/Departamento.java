@@ -123,3 +123,4 @@ public class Departamento {
 		this.cod_usuario = cod_usuario;
 	}
 }
+

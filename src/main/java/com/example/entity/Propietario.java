@@ -1,3 +1,4 @@
+
 package com.example.entity;
 
 import java.util.Date;
@@ -165,3 +166,4 @@ public class Propietario {
 	
 
 }
+
