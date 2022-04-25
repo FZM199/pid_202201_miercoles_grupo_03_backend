@@ -11,7 +11,7 @@ import com.example.entity.Ubigeo;
 @Service
 public class UbigeoServiceImpl implements UbigeoService {
 
-	@Autowired
+
 	private UbigeoRepository repository;
 	
 	@Override

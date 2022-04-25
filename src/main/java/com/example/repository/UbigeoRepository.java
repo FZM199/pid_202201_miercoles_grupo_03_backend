@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.example.entity.Ubigeo;
 
+@Repository
 public interface UbigeoRepository {
 	@Query("select distinct x.departamento from Ubigeo x order by 1 asc")
 	public abstract List<String> listaDepartamentos();
