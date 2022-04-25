@@ -2,12 +2,12 @@ package com.example.service;
 
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.entity.Opcion;
+import com.example.entity.Rol;
 import com.example.entity.Usuario;
 import com.example.repository.UsuarioRepository;
 
@@ -31,23 +31,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public Optional<Usuario> findbyNombreUsuario(String nombreUsuario) {
-		// TODO Auto-generated method stub
-		return repo.findbyNombreUsuario(nombreUsuario);
+	public List<Opcion> traerEnlacesDeUsuario(int idUsuario) {
+		return repo.traerEnlacesDeUsuario(idUsuario);
 	}
 
 	@Override
-	public boolean exitsByNombreUsuario(String nombreUsuario) {
-		// TODO Auto-generated method stub
-		return repo.exitsByNombreUsuario(nombreUsuario);
+	public List<Rol> traerRolesDeUsuario(int idUsuario) {
+		return repo.traerRolesDeUsuario(idUsuario);
 	}
-
 
 	@Override
-	public boolean exitsByEmail(String email) {
-		// TODO Auto-generated method stub
-		return repo.exitsByEmail(email);
+	public Usuario buscaPorLogin(String login) {
+		return repo.findByLogin(login);
 	}
-
 
 }
