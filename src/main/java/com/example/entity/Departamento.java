@@ -1,4 +1,5 @@
 
+
 package com.example.entity;
 
 import java.util.Date;
@@ -112,3 +113,4 @@ public class Departamento {
 		this.cod_usuario = cod_usuario;
 	}
 }
+

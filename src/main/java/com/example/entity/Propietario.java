@@ -1,3 +1,4 @@
+
 package com.example.entity;
 
 import java.sql.Time;
@@ -181,3 +182,4 @@ public class Propietario {
 	
 
 }
+
