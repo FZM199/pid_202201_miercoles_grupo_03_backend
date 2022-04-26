@@ -1,4 +1,5 @@
 
+
 package com.example.entity;
 
 import java.util.Date;
@@ -49,10 +50,6 @@ public class Departamento {
 	@Basic(optional = false)
 	@Column(name = "codedificio")
 	private int cod_edificio;
-	
-	@Basic(optional = false)
-	@Column(name = "codpropietario")
-	private int cod_propietario;
 	
 	@Basic(optional = false)
 	@Column(name = "codusua")
@@ -107,13 +104,6 @@ public class Departamento {
 		this.cod_edificio = cod_edificio;
 	}
 
-	public int getCod_propietario() {
-		return cod_propietario;
-	}
-
-	public void setCod_propietario(int cod_propietario) {
-		this.cod_propietario = cod_propietario;
-	}
 
 	public int getCod_usuario() {
 		return cod_usuario;
