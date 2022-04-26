@@ -9,7 +9,7 @@ import com.example.entity.Mascota;
 import com.example.repository.MascotaRepository;
 
 @Service
-public class MascotaImpl implements MascotaService{
+public class MascotaServiceImpl implements MascotaService{
 	
 	@Autowired
 	private MascotaRepository repository;
