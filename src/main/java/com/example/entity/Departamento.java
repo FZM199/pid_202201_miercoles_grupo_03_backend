@@ -52,7 +52,7 @@ public class Departamento {
 	private int cod_edificio;
 	
 	@Basic(optional = false)
-	@Column(name = "codusua")
+	@Column(name = "idUsuario")
 	private int cod_usuario;
 
 	

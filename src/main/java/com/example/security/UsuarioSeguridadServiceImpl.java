@@ -31,7 +31,7 @@ public class UsuarioSeguridadServiceImpl implements UserDetailsService {
 			if (objUsuario != null) {
 				log.info("========|||=========== " + objUsuario.getLogin());
 
-				List<Rol> lstRol = usuarioRepository.traerRolesDeUsuario(objUsuario.getCodusua());
+				List<Rol> lstRol = usuarioRepository.traerRolesDeUsuario(objUsuario.getIdUsuario());
 				log.info("========|||=========== " + lstRol);
 
 				userDetails = UsuarioPrincipal.build(objUsuario, lstRol);

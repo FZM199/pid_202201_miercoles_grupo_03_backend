@@ -71,7 +71,7 @@ public class Propietario {
 	private boolean estado;
 	
 	@ManyToOne
-	@JoinColumn(name ="codusua")
+	@JoinColumn(name ="idUsuario")
 	private Usuario usuario;
 	
 	@ManyToOne

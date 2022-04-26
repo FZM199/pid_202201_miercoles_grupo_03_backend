@@ -26,8 +26,8 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name="codusua")
-	private int codusua;
+	@Column(name="idUsuario")
+	private int idUsuario;
 	
 	@Basic(optional = false)
 	@Column(length = 8)
@@ -61,7 +61,7 @@ public class Usuario {
 	
 	@Basic(optional = false)
 	@Column(length = 8)
-	private String contraseña;
+	private String password;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd", timezone="America/Lima")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -81,118 +81,292 @@ public class Usuario {
 	@Basic(optional = false)
 	private boolean estado;
 
-	public int getCodusua() {
-		return codusua;
+	
+	
+	
+
+
+
+	public int getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setCodusua(int codusua) {
-		this.codusua = codusua;
+
+
+
+
+
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
+
+
+
+
+
+
 
 	public String getDni() {
 		return dni;
 	}
 
+
+
+
+
+
+
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
+
+
+
+
+
+
 
 	public String getNombre() {
 		return nombre;
 	}
 
+
+
+
+
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+
+
+
+
+
 
 	public String getPrimerapellido() {
 		return primerapellido;
 	}
 
+
+
+
+
+
+
 	public void setPrimerapellido(String primerapellido) {
 		this.primerapellido = primerapellido;
 	}
+
+
+
+
+
+
 
 	public String getSegundoapellido() {
 		return segundoapellido;
 	}
 
+
+
+
+
+
+
 	public void setSegundoapellido(String segundoapellido) {
 		this.segundoapellido = segundoapellido;
 	}
+
+
+
+
+
+
 
 	public String getTelefono() {
 		return telefono;
 	}
 
+
+
+
+
+
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+
+
+
+
+
 
 	public String getCelular() {
 		return celular;
 	}
 
+
+
+
+
+
+
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+
+
+
+
+
+
 
 	public String getDireccion() {
 		return direccion;
 	}
 
+
+
+
+
+
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+
+
+
+
+
 
 	public String getCorreo() {
 		return correo;
 	}
 
+
+
+
+
+
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+
+
+
+
+
+
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+
+
+
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
+
+
+
+
+
 
 	public Date getFechareg() {
 		return fechareg;
 	}
 
+
+
+
+
+
+
 	public void setFechareg(Date fechareg) {
 		this.fechareg = fechareg;
 	}
+
+
+
+
+
+
 
 	public Ubigeo getUbigeo() {
 		return ubigeo;
 	}
 
+
+
+
+
+
+
 	public void setUbigeo(Ubigeo ubigeo) {
 		this.ubigeo = ubigeo;
 	}
+
+
+
+
+
+
 
 	public String getLogin() {
 		return login;
 	}
 
+
+
+
+
+
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
+
+
+
+
+
 
 	public boolean isEstado() {
 		return estado;
 	}
 
+
+
+
+
+
+
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	
+
+
+
+
+
+
+
 	public String getNombreCompleto() {
 		return nombre.concat(" ").concat(primerapellido+segundoapellido);
 	}
