@@ -51,10 +51,6 @@ public class Departamento {
 	private int cod_edificio;
 	
 	@Basic(optional = false)
-	@Column(name = "codpropietario")
-	private int cod_propietario;
-	
-	@Basic(optional = false)
 	@Column(name = "codusua")
 	private int cod_usuario;
 
@@ -107,13 +103,6 @@ public class Departamento {
 		this.cod_edificio = cod_edificio;
 	}
 
-	public int getCod_propietario() {
-		return cod_propietario;
-	}
-
-	public void setCod_propietario(int cod_propietario) {
-		this.cod_propietario = cod_propietario;
-	}
 
 	public int getCod_usuario() {
 		return cod_usuario;
