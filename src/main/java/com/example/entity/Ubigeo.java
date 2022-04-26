@@ -11,20 +11,21 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "ubigeo")
+@Table(name = "Ubigeo")
 public class Ubigeo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUbigeo;
+	private int codubigeo;
 	private String departamento;
 	private String provincia;
 	private String distrito;
-	public int getIdUbigeo() {
-		return idUbigeo;
+	
+	public int getCodubigeo() {
+		return codubigeo;
 	}
-	public void setIdUbigeo(int idUbigeo) {
-		this.idUbigeo = idUbigeo;
+	public void setCodubigeo(int codubigeo) {
+		this.codubigeo = codubigeo;
 	}
 	public String getDepartamento() {
 		return departamento;
@@ -44,4 +45,7 @@ public class Ubigeo {
 	public void setDistrito(String distrito) {
 		this.distrito = distrito;
 	}
+	
+	
+	
 }

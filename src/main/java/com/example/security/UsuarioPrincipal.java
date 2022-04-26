@@ -39,7 +39,7 @@ public class UsuarioPrincipal implements UserDetails {
 			authorities.add(new SimpleGrantedAuthority(x.getNombre()));
 		}
 		nombreCompleto = usuario.getNombreCompleto();
-		return new UsuarioPrincipal(usuario.getIdUsuario(), usuario.getLogin(), usuario.getPassword(), usuario.getNombreCompleto(), authorities);
+		return new UsuarioPrincipal(usuario.getCodusua(), usuario.getLogin(), usuario.getContraseña(), usuario.getNombreCompleto(), authorities);
 	}
 
 	@Override

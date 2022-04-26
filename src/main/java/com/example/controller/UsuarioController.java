@@ -47,7 +47,7 @@ public class UsuarioController {
 	public ResponseEntity<Map<String, Object>> insertaUsuario(@RequestBody Usuario obj) {
 		Map<String, Object> salida = new HashMap<>();
 		try {
-			Usuario objSalida = usuarioService.insertaActualizaUsuario(obj);
+			Usuario objSalida = usuarioservice.insertaActualizaUsuario(obj);
 			if (objSalida == null) {
 				salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			} else {

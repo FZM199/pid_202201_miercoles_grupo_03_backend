@@ -5,9 +5,12 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,6 +18,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="Usuario")
@@ -59,14 +63,20 @@ public class Usuario {
 	@Column(length = 8)
 	private String contraseña;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima")
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd", timezone="America/Lima")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Basic(optional = false)
 	private Date fechareg;
 	
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "codubigeo")
 	@Basic(optional = false)
-	private int codubigeo;
+	private Ubigeo ubigeo;
+	
+	@Basic(optional = false)
+	private String login;
 	
 	@Basic(optional = false)
 	private boolean estado;
@@ -159,12 +169,20 @@ public class Usuario {
 		this.fechareg = fechareg;
 	}
 
-	public int getCodubigeo() {
-		return codubigeo;
+	public Ubigeo getUbigeo() {
+		return ubigeo;
 	}
 
-	public void setCodubigeo(int codubigeo) {
-		this.codubigeo = codubigeo;
+	public void setUbigeo(Ubigeo ubigeo) {
+		this.ubigeo = ubigeo;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public boolean isEstado() {
@@ -175,4 +193,9 @@ public class Usuario {
 		this.estado = estado;
 	}
 	
+	public String getNombreCompleto() {
+		return nombre.concat(" ").concat(primerapellido+segundoapellido);
+	}
+	
+}
 	
