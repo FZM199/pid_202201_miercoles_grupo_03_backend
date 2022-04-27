@@ -29,17 +29,17 @@ public class Constantes {
 
 
 	public static final String MENSAJE_DEPARTAMENTO_YAEXISTE = "Ya existe dicho Departamento.";
-  public static final String MENSAJE_DEPARTAMENTO_REGISTRADO = "Se Registro Departamento Existosamente.";
-  public static final String MENSAJE_DEPARTAMENTO_ACTUALIZADO = "Se Actualizo Departamento Existosamente.";
-  public static final String MENSAJE_DEPARTAMENTO_ELIMINADO = "Se Elimino Departamento Exitosamente.";
-  public static final String MENSAJE_DEPARTAMENTO_ERROR_REGISTRAR = "No se Registro Departamento, Verifique los datos.";
+	public static final String MENSAJE_DEPARTAMENTO_REGISTRADO = "Se Registro Departamento Existosamente.";
+	public static final String MENSAJE_DEPARTAMENTO_ACTUALIZADO = "Se Actualizo Departamento Existosamente.";
+	public static final String MENSAJE_DEPARTAMENTO_ELIMINADO = "Se Elimino Departamento Exitosamente.";
+	public static final String MENSAJE_DEPARTAMENTO_ERROR_REGISTRAR = "No se Registro Departamento, Verifique los datos.";
 
     
-	public static final String MENSAJE_MASCOTA_YAEXISTE = "Ya existe dicha Mascota.";
-  public static final String MENSAJE_MASCOTA_REGISTRADO = "Se Registró Mascota Existosamente.";
-  public static final String MENSAJE_MASCOTA_ACTUALIZADO = "Se Actualizó Mascota Existosamente.";
-  public static final String MENSAJE_MASCOTA_ELIMINADO = "Se Eliminó Mascota Exitosamente.";
-  public static final String MENSAJE_MASCOTA_ERROR_REGISTRAR = "No se Registró Mascota, Verifique los datos.";
+  	public static final String MENSAJE_MASCOTA_YAEXISTE = "Ya existe dicha Mascota.";
+  	public static final String MENSAJE_MASCOTA_REGISTRADO = "Se Registró Mascota Existosamente.";
+  	public static final String MENSAJE_MASCOTA_ACTUALIZADO = "Se Actualizó Mascota Existosamente.";
+  	public static final String MENSAJE_MASCOTA_ELIMINADO = "Se Eliminó Mascota Exitosamente.";
+  	public static final String MENSAJE_MASCOTA_ERROR_REGISTRAR = "No se Registró Mascota, Verifique los datos.";
 
 
 }
