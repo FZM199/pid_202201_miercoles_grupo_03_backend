@@ -2,30 +2,60 @@ package com.example.service;
 
 import java.util.List;
 
+
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.example.entity.Opcion;
+import com.example.entity.Rol;
 import com.example.entity.Usuario;
 import com.example.repository.UsuarioRepository;
 
+
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
+@Transactional
+public class UsuarioServiceImpl implements UsuarioService {
+
+
 
 	@Autowired
-	private UsuarioRepository repository;
+	private UsuarioRepository repo;
 	
-	@Override
-	public Usuario inserta(Usuario obj) {
-		
-		return repository.save(obj);
-	}
-
 	@Override
 	public List<Usuario> listaUsuario() {
-		
-		return repository.findAll();
+		// TODO Auto-generated method stub
+		return repo.findAll();
 	}
 
-	
+	@Override
+	public Usuario insertaActualizaUsuario(Usuario u) {
+		// TODO Auto-generated method stub
+		return repo.save(u);
+	}
+
+	@Override
+	public List<Opcion> traerEnlacesDeUsuario(int idUsuario) {
+		return repo.traerEnlacesDeUsuario(idUsuario);
+	}
+
+	@Override
+	public List<Rol> traerRolesDeUsuario(int idUsuario) {
+		return repo.traerRolesDeUsuario(idUsuario);
+	}
+
+	@Override
+	public Usuario buscaPorLogin(String login) {
+		return repo.findByLogin(login);
+	}
+
+	@Override
+	public Usuario inserta(Usuario obj) {
+		// TODO Auto-generated method stub
+		return repo.save(obj);
+	}
 
 }
