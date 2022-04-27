@@ -1,7 +1,9 @@
 package com.example.service;
 
-
 import java.util.List;
+
+
+
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,10 @@ import com.example.entity.Usuario;
 import com.example.repository.UsuarioRepository;
 
 
-
 @Service
 @Transactional
 public class UsuarioServiceImpl implements UsuarioService {
+
 
 
 	@Autowired
@@ -48,6 +50,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public Usuario buscaPorLogin(String login) {
 		return repo.findByLogin(login);
+	}
+
+	@Override
+	public Usuario inserta(Usuario obj) {
+		// TODO Auto-generated method stub
+		return repo.save(obj);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import javax.transaction.Transactional;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -92,3 +94,4 @@ public class Usuario {
 	}
 	
 }
+
