@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,12 +21,13 @@ import com.example.utils.Constantes;
 
 @RestController
 @RequestMapping("/rest/departamento")
+@CrossOrigin(origins = "http://localhost:4200")
 public class DepartamentoController {
 
 	@Autowired
 	private DepartamentoService service;
 	
-	@GetMapping
+	@GetMapping("/listadepartamento")
 	@ResponseBody // --> Significa que me va retornar datos en Json
 	public ResponseEntity<List<Departamento>> listar(){
 		List<Departamento> lista = service.listaDepartamento();
