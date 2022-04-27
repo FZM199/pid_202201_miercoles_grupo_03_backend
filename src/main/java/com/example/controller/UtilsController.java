@@ -28,8 +28,7 @@ public class UtilsController {
 	@Autowired
 	private EdificioService edificioService;
 	
-	@Autowired
-	private PropietarioService propietarioService;
+
 	
 	//  Combo Box Usuario para Formulario Departamento 
 	@GetMapping("/usuario")
