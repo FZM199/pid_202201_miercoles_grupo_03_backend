@@ -16,13 +16,13 @@ public class DepartamentoImpl implements DepartamentoService{
 	
 	@Override
 	public Departamento insertaActualiza(Departamento obj) {
-		// TODO Auto-generated method stub
+		
 		return repository.save(obj);
 	}
 
 	@Override
 	public List<Departamento> listaDepartamento() {
-		// TODO Auto-generated method stub
+		
 		return repository.findAll();
 	}
 

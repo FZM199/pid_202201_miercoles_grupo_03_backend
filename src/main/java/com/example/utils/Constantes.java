@@ -41,4 +41,5 @@ public class Constantes {
   public static final String MENSAJE_MASCOTA_ELIMINADO = "Se Eliminó Mascota Exitosamente.";
   public static final String MENSAJE_MASCOTA_ERROR_REGISTRAR = "No se Registró Mascota, Verifique los datos.";
 
+
 }
