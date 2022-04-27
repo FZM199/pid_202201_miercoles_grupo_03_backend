@@ -1,7 +1,9 @@
 
 package com.example.entity;
 
+import java.sql.Time;
 import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,33 +28,30 @@ public class Propietario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "codpropietario")
-	private int cod_propietario;
+	private int codpropietario;
 	
 	@Basic(optional = false)
-	@Column(name = "dni",length = 8)
-	private int dni_propietario;
+	@Column(length = 8)
+	private int dni;
 	
 	@Basic(optional = false)
-	@Column(name = "nombre",length = 200)
-	private String nombre_propietario;
+	@Column(length = 200)
+	private String nombre;
 	
 	@Basic(optional = false)
-	@Column(name = "primerapellido",length = 200)
-	private String primerapellido_propietario;
+	@Column(length = 200)
+	private String primerapellido;
 	
 	@Basic(optional = false)
-	@Column( name = "segundoapellido",length = 200)
-	private String segundoapellido_propietario;
+	@Column( length = 200)
+	private String segundoapellido;
 	
 	@Basic(optional = false)
-	@Column(name = "telefono")
-	private String telefono_propietario;
+	private String telefono;
 	
 	
 	@Basic(optional = false)
-	@Column(name = "celular")
-	private String celular_propietario;
+	private String celular;
 	
 	
 	
@@ -58,107 +59,122 @@ public class Propietario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Basic(optional = false)
-	@Column(name = "fecharegistro")
-	private Date fecharegistro_propietario;
+	private Date fecharegistro;
 	
+	/*@JsonFormat(pattern = "HH:mm:ss", timezone="America/Lima")
+	@DateTimeFormat(pattern = "HH:mm:ss")
+	@Temporal(TemporalType.TIMESTAMP)*/
+	@Basic(optional = false)
+	private String horaregistro;
 	
 	@Basic(optional = false)
-	@Column(name = "estado")
-	private boolean estado_propietario;
-
-
-
-
-	public int getCod_propietario() {
-		return cod_propietario;
-	}
-
-
-	public void setCod_propietario(int cod_propietario) {
-		this.cod_propietario = cod_propietario;
-	}
-
-
-	public int getDni_propietario() {
-		return dni_propietario;
-	}
-
-
-	public void setDni_propietario(int dni_propietario) {
-		this.dni_propietario = dni_propietario;
-	}
-
-
-	public String getNombre_propietario() {
-		return nombre_propietario;
-	}
-
-
-	public void setNombre_propietario(String nombre_propietario) {
-		this.nombre_propietario = nombre_propietario;
-	}
-
-
-	public String getPrimerapellido_propietario() {
-		return primerapellido_propietario;
-	}
-
-
-	public void setPrimerapellido_propietario(String primerapellido_propietario) {
-		this.primerapellido_propietario = primerapellido_propietario;
-	}
-
-
-	public String getSegundoapellido_propietario() {
-		return segundoapellido_propietario;
-	}
-
-
-	public void setSegundoapellido_propietario(String segundoapellido_propietario) {
-		this.segundoapellido_propietario = segundoapellido_propietario;
-	}
-
-
-	public String getTelefono_propietario() {
-		return telefono_propietario;
-	}
-
-
-	public void setTelefono_propietario(String telefono_propietario) {
-		this.telefono_propietario = telefono_propietario;
-	}
-
-
-	public String getCelular_propietario() {
-		return celular_propietario;
-	}
-
-
-	public void setCelular_propietario(String celular_propietario) {
-		this.celular_propietario = celular_propietario;
-	}
-
-
-	public Date getFecharegistro_propietario() {
-		return fecharegistro_propietario;
-	}
-
-
-	public void setFecharegistro_propietario(Date fecharegistro_propietario) {
-		this.fecharegistro_propietario = fecharegistro_propietario;
-	}
-
-
-	public boolean isEstado_propietario() {
-		return estado_propietario;
-	}
-
-
-	public void setEstado_propietario(boolean estado_propietario) {
-		this.estado_propietario = estado_propietario;
-	}
-
+	private boolean estado;
 	
+	@ManyToOne
+	@JoinColumn(name ="idUsuario")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name ="coddepartamento")
+	private Departamento departamento;
+	
+	
+
+	public int getCodpropietario() {
+		return codpropietario;
+	}
+
+	public void setCodpropietario(int codpropietario) {
+		this.codpropietario = codpropietario;
+	}
+
+	public int getDni() {
+		return dni;
+	}
+
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getPrimerapellido() {
+		return primerapellido;
+	}
+
+	public void setPrimerapellido(String primerapellido) {
+		this.primerapellido = primerapellido;
+	}
+
+	public String getSegundoapellido() {
+		return segundoapellido;
+	}
+
+	public void setSegundoapellido(String segundoapellido) {
+		this.segundoapellido = segundoapellido;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public Date getFecharegistro() {
+		return fecharegistro;
+	}
+
+	public void setFecharegistro(Date fecharegistro) {
+		this.fecharegistro = fecharegistro;
+	}
+
+	public String getHoraregistro() {
+		return horaregistro;
+	}
+
+	public void setHoraregistro(String horaregistro) {
+		this.horaregistro = horaregistro;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
 
 	
 

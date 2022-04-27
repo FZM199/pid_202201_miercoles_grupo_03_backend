@@ -2,6 +2,8 @@ package com.example.service;
 
 
 import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,9 +13,12 @@ import com.example.entity.Rol;
 import com.example.entity.Usuario;
 import com.example.repository.UsuarioRepository;
 
+
+
 @Service
 @Transactional
 public class UsuarioServiceImpl implements UsuarioService {
+
 
 	@Autowired
 	private UsuarioRepository repo;
