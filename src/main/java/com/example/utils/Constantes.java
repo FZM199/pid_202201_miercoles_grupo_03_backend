@@ -18,4 +18,5 @@ public class Constantes {
     public static final String MENSAJE_DEPARTAMENTO_ERROR_REGISTRAR = "No se Registro Departamento, Verifique los datos.";
 
 
+
 }

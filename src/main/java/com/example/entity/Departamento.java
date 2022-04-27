@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,80 +48,85 @@ public class Departamento {
 	@Column(name = "nropiso")
 	private int nro_piso;
 	
-	@Basic(optional = false)
-	@Column(name = "codedificio")
-	private int cod_edificio;
 	
-	@Basic(optional = false)
-	@Column(name = "codpropietario")
-	private int cod_propietario;
-	
-	@Basic(optional = false)
-	@Column(name = "codusua")
-	private int cod_usuario;
+	@ManyToOne
+	@JoinColumn(name = "codedificio")
+	private Edificio codedificio;
 
 	
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario idUsuario;
+
+
 	public int getCod_departamento() {
 		return cod_departamento;
 	}
+
 
 	public void setCod_departamento(int cod_departamento) {
 		this.cod_departamento = cod_departamento;
 	}
 
+
 	public String getNum_departamento() {
 		return num_departamento;
 	}
+
 
 	public void setNum_departamento(String num_departamento) {
 		this.num_departamento = num_departamento;
 	}
 
+
 	public Date getFecha_entrega() {
 		return fecha_entrega;
 	}
+
 
 	public void setFecha_entrega(Date fecha_entrega) {
 		this.fecha_entrega = fecha_entrega;
 	}
 
+
 	public Double getPrecio() {
 		return precio;
 	}
+
 
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
+
 	public int getNro_piso() {
 		return nro_piso;
 	}
+
 
 	public void setNro_piso(int nro_piso) {
 		this.nro_piso = nro_piso;
 	}
 
-	public int getCod_edificio() {
-		return cod_edificio;
+
+	public Edificio getCodedificio() {
+		return codedificio;
 	}
 
-	public void setCod_edificio(int cod_edificio) {
-		this.cod_edificio = cod_edificio;
+
+	public void setCodedificio(Edificio codedificio) {
+		this.codedificio = codedificio;
 	}
 
-	public int getCod_propietario() {
-		return cod_propietario;
+
+	public Usuario getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setCod_propietario(int cod_propietario) {
-		this.cod_propietario = cod_propietario;
+
+	public void setIdUsuario(Usuario idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public int getCod_usuario() {
-		return cod_usuario;
-	}
-
-	public void setCod_usuario(int cod_usuario) {
-		this.cod_usuario = cod_usuario;
-	}
+	
 }
