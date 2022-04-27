@@ -27,7 +27,7 @@ public class DepartamentoController {
 	@Autowired
 	private DepartamentoService service;
 	
-	@GetMapping
+	@GetMapping("/listadepartamento")
 	@ResponseBody // --> Significa que me va retornar datos en Json
 	public ResponseEntity<List<Departamento>> listar(){
 		List<Departamento> lista = service.listaDepartamento();
