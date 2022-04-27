@@ -1,8 +1,7 @@
 package com.example.entity;
 
-
 import java.util.Date;
-
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -60,9 +59,14 @@ public class Usuario {
 	private Date   fechareg;            // date          not null,
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idUbigeo")
-	private Ubigeo   idUbigeo;          
-    @Transactional
+	@JoinColumn(name = "idubigeo")
+	@Basic(optional = false)
+	private Ubigeo idUbigeo;
+	@Basic(optional = false)
+	private String login;
+	@Basic(optional = false)
+	private boolean estado;   
+  @Transactional
 	public String getNombreCompleto() {
 		return nombre.concat(" ").concat(primerapellido+segundoapellido);
 	}

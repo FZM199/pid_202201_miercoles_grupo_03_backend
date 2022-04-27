@@ -16,7 +16,6 @@ import lombok.Setter;
 @Entity
 @Table(name = "ubigeo")
 public class Ubigeo {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="idUbigeo")
@@ -27,5 +26,4 @@ public class Ubigeo {
 	private String provincia;
 	@Column(name="distrito")
 	private String distrito;
-
 }
