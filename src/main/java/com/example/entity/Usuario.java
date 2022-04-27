@@ -20,9 +20,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
+@Setter
 @Entity
 @Table(name="Usuario")
 @ToString
@@ -59,7 +61,7 @@ public class Usuario {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUbigeo")
-	private Ubigeo   idUbigeo;             //     int           not null,
+	private Ubigeo   idUbigeo;          
     @Transactional
 	public String getNombreCompleto() {
 		return nombre.concat(" ").concat(primerapellido+segundoapellido);
