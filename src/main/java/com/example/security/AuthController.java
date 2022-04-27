@@ -30,7 +30,7 @@ public class AuthController {
     private JwtProvider jwtProvider;
     
     
-    @PostMapping("/login")
+   @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@RequestBody LoginUsuario loginUsuario){
     	log.info(">>> login >>> " + loginUsuario.getLogin());
     	log.info(">>> login >>> " + loginUsuario.getPassword());
