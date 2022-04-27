@@ -14,19 +14,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Ubigeo")
+@Table(name = "ubigeo")
 public class Ubigeo {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="idUbigeo")
-	private int codubigeo;
+	private int idUbigeo;
 	@Column(name="departamento")
 	private String departamento;
 	@Column(name="provincia")
 	private String provincia;
 	@Column(name="distrito")
 	private String distrito;
-
-
 }
