@@ -40,6 +40,7 @@ public class Constantes {
   	public static final String MENSAJE_MASCOTA_ACTUALIZADO = "Se Actualizó Mascota Existosamente.";
   	public static final String MENSAJE_MASCOTA_ELIMINADO = "Se Eliminó Mascota Exitosamente.";
   	public static final String MENSAJE_MASCOTA_ERROR_REGISTRAR = "No se Registró Mascota, Verifique los datos.";
-
+  	public static final String MENSAJE_INCIDENTE_REGISTRADO = "Se Registró Incidente Existosamente.";
+  	public static final String MENSAJE_INCIDENTE_ERROR_REGISTRAR = "No se Registró Incidente, Verifique los datos.";
 
 }
