@@ -26,7 +26,7 @@ public class PropietarioController {
 	@Autowired
 	private PropietarioService propietarioservice; 
 	
-	@GetMapping
+	@GetMapping("/listapropietarios")
 	@ResponseBody
 	public ResponseEntity<List<Propietario>> listaPropietario(){
 		List<Propietario> lista = propietarioservice.listaPropietario();

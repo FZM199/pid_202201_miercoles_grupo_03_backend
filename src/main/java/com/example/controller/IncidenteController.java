@@ -40,6 +40,7 @@ public class IncidenteController {
 	public ResponseEntity<Map<String, Object>> insertaIncidente(@RequestBody Incidente obj){
 		Map<String, Object> salida = new HashMap<>();
 		try {
+			obj.setEstado(true);
 			Incidente objsalida = service.insertaActualiza(obj);
 			if(objsalida == null) {
 				salida.put("mensaje", Constantes.MENSAJE_INCIDENTE_ERROR_REGISTRAR);

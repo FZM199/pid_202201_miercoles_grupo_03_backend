@@ -90,7 +90,7 @@ public class Usuario {
   
 	@Transactional
 	public String getNombreCompleto() {
-		return nombre.concat(" ").concat(primerapellido+segundoapellido);
+		return nombre.concat(" ").concat(primerapellido).concat(" ").concat(segundoapellido);
 	}
 	
 }

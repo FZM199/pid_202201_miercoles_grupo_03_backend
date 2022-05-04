@@ -13,11 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Edificio;
+import com.example.entity.Mascota;
 import com.example.entity.Propietario;
+//import com.example.entity.Propietario;
 import com.example.entity.Usuario;
 import com.example.service.EdificioService;
+import com.example.service.MascotaService;
+//import com.example.service.PropietarioService;
 import com.example.service.PropietarioService;
-
 import com.example.entity.Ubigeo;
 
 import com.example.service.UbigeoService;
@@ -37,6 +40,12 @@ public class UtilsController {
 	@Autowired
 	private EdificioService edificioService;
 	
+	@Autowired
+	private PropietarioService propietarioService;
+	
+	@Autowired
+	private MascotaService mascotaService;
+	
 	@GetMapping("/listaDepartamentos")
 	@ResponseBody
 	public List<String> listaDepartamentos() {
@@ -54,12 +63,21 @@ public class UtilsController {
 	public List<Ubigeo> listaDistritos(@PathVariable("paramDep") String dep, @PathVariable("paramProv") String prov) {
 		return ubigeoService.listaDistritos(dep, prov);
 	}
-	@GetMapping("/listausuarios")
+	
+	@GetMapping("/listapropietarios")
 	@ResponseBody
-	public List<Usuario> listausuarios(){
-		return usuarioService.listaUsuario();
+	public ResponseEntity<List<Propietario>> listaPropietario(){
+		List<Propietario> lista = propietarioService.listaPropietario();
+		return ResponseEntity.ok(lista);
+	}
+	@GetMapping("/listamascota")
+	@ResponseBody
+	public ResponseEntity<List<Mascota>> listar(){
+		List<Mascota> lista = mascotaService.listaMascota();
+		return ResponseEntity.ok(lista);
 	}
 
+	
 	
 	//  Combo Box Usuario para Formulario Departamento 
 	@GetMapping("/usuario")

@@ -1,10 +1,7 @@
 
 package com.example.entity;
 
-import java.sql.Time;
 import java.util.Date;
-import java.util.Calendar;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +18,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "propietario")
 public class Propietario {
@@ -49,11 +51,8 @@ public class Propietario {
 	@Basic(optional = false)
 	private String telefono;
 	
-	
 	@Basic(optional = false)
 	private String celular;
-	
-	
 	
 	@JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -61,11 +60,11 @@ public class Propietario {
 	@Basic(optional = false)
 	private Date fecharegistro;
 	
-	/*@JsonFormat(pattern = "HH:mm:ss", timezone="America/Lima")
+	@JsonFormat(pattern = "HH:mm:ss", timezone="America/Lima")
 	@DateTimeFormat(pattern = "HH:mm:ss")
-	@Temporal(TemporalType.TIMESTAMP)*/
+	@Temporal(TemporalType.TIMESTAMP)
 	@Basic(optional = false)
-	private String horaregistro;
+	private Date horaregistro;
 	
 	@Basic(optional = false)
 	private boolean estado;
@@ -78,108 +77,5 @@ public class Propietario {
 	@JoinColumn(name ="coddepartamento")
 	private Departamento departamento;
 	
-	
-
-	public int getCodpropietario() {
-		return codpropietario;
-	}
-
-	public void setCodpropietario(int codpropietario) {
-		this.codpropietario = codpropietario;
-	}
-
-	public int getDni() {
-		return dni;
-	}
-
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getPrimerapellido() {
-		return primerapellido;
-	}
-
-	public void setPrimerapellido(String primerapellido) {
-		this.primerapellido = primerapellido;
-	}
-
-	public String getSegundoapellido() {
-		return segundoapellido;
-	}
-
-	public void setSegundoapellido(String segundoapellido) {
-		this.segundoapellido = segundoapellido;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public Date getFecharegistro() {
-		return fecharegistro;
-	}
-
-	public void setFecharegistro(Date fecharegistro) {
-		this.fecharegistro = fecharegistro;
-	}
-
-	public String getHoraregistro() {
-		return horaregistro;
-	}
-
-	public void setHoraregistro(String horaregistro) {
-		this.horaregistro = horaregistro;
-	}
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public Departamento getDepartamento() {
-		return departamento;
-	}
-
-	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
-	}
-
-	
-
-	
-	
-
 }
 
